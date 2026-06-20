@@ -64,7 +64,7 @@ int main() {
                         std::cout << "[Z] Undo first click." << std::endl;
                         std::cout << "[S] Correct aspect ratio." << std::endl;
                         std::cout << "[-/=] Decrease and increase max iterations." << std::endl;
-                        std::cout << "[WASD] Move around." << std::endl;
+                        std::cout << "[Arrow Keys] Move around." << std::endl;
                         std::cout << "[1 -> 0] Change color scheme." << std::endl;
                         std::cout << "[ESC] Quit.\n" << std::endl;
                         
