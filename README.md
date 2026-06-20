@@ -19,7 +19,7 @@ A Mandelbrot set viewer written in C++ using [SFML 3](https://www.sfml-dev.org/)
 | Z | Undo first click |
 | S | Correct aspect ratio |
 | - / = | Decrease and increase max iterations |
-| WASD | Move around |
+| Arrow Keys | Move around |
 | 1 to 0 | Change color scheme |
 | ESC | Quit |
 
