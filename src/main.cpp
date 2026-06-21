@@ -23,12 +23,18 @@ int main() {
     std::cout << "\n\n\nOpening window. Press [C] for controls." << std::endl;
 
     sf::RenderWindow window(sf::VideoMode({WIDTH, HEIGHT}), "Mandelbrot Viewer");
-    sf::Image icon("../assets/icon.png");
     sf::Cursor cursor(sf::Cursor::Type::Cross);
+    sf::Image icon;
+    bool iconLoaded = icon.loadFromFile("../assets/icon.png");
     
-    window.setIcon(icon);
-    window.setMouseCursor(cursor);
     window.setFramerateLimit(60);
+    window.setMouseCursor(cursor);
+
+    if (iconLoaded) {
+        window.setIcon(icon);
+    } else {
+        std::cout << "Window icon failed to load." << std::endl;
+    }
     
     sf::Texture texture;
     sf::Sprite mandelbrotImage = renderMandelbrot(texture, WIDTH, HEIGHT, MAX_ITERATIONS, COLOR_ID);
@@ -84,15 +90,22 @@ int main() {
                         fullscreen = !fullscreen;
 
                         if (fullscreen) {
+                            std::cout << "Entering fullscreen mode." << std::endl;
+
                             window.create(sf::VideoMode::getDesktopMode(), "Mandelbrot Viewer", sf::State::Fullscreen);
                         } else {
+                            std::cout << "Exiting fullscreen mode." << std::endl;
+
                             window.create(sf::VideoMode({800, 600}), "Mandelbrot Viewer", sf::Style::Default);
                         }
 
                         WIDTH = window.getSize().x;
                         HEIGHT = window.getSize().y;
 
-                        window.setIcon(icon);
+                        if (iconLoaded) {
+                            window.setIcon(icon);
+                        }
+
                         window.setMouseCursor(cursor);
                         window.setFramerateLimit(60);
                         window.setView(sf::View(sf::FloatRect(sf::Vector2f(0.f, 0.f), sf::Vector2f((float)WIDTH, (float)HEIGHT))));
