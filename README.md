@@ -1,5 +1,5 @@
 # Mandelbrot Viewer
-A Mandelbrot set viewer written in C++ using [SFML 3](https://www.sfml-dev.org/)
+A Mandelbrot set viewer written in C++ using [SFML](https://www.sfml-dev.org/)
 
 ## Features
 - Multithreading
