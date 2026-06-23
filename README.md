@@ -8,7 +8,7 @@ A Mandelbrot set viewer written in C++ using [SFML](https://www.sfml-dev.org/)
 - Adjustable max iterations
 
 ## Controls
-| Input | Output |
+| Control | Action |
 |------|-----|
 | Left Click | Two clicks define a zoom rectangle |
 | Right Click | Zoom out |
